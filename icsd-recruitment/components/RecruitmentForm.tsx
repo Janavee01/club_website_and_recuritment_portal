@@ -48,33 +48,35 @@ export default function RecruitmentForm({ department, questions }: RecruitmentFo
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  e.preventDefault()
+  setIsSubmitting(true)
 
-    try {
-      const res = await fetch("/api/apply", {
+  try {
+    const res = await fetch(
+      "https://script.google.com/macros/s/AKfycbx__Ua5s9VOjYnPcyTf4gL9P9Ov4c3fKP8ILS1IdcrvadyBvG9Xr1_uL2LN1HRYi0z4Eg/exec",
+      {
         method: "POST",
+        mode: "no-cors", // required for Google Sheets
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, department }),
-      })
-
-      const data = await res.json()
-      alert(data.message)
-
-      if (data.success) {
-        setFormData({
-          name: "",
-          registrationNumber: "",
-          email: "",
-          answers: {},
-        })
       }
-    } catch (error) {
-      alert("Error submitting application. Please try again.")
-    } finally {
-      setIsSubmitting(false)
-    }
+    )
+
+    // since no-cors gives opaque response, you can't read res.json()
+    alert("Application submitted successfully!")
+
+    setFormData({
+      name: "",
+      registrationNumber: "",
+      email: "",
+      answers: {},
+    })
+  } catch (error) {
+    alert("Error submitting application. Please try again.")
+  } finally {
+    setIsSubmitting(false)
   }
+}
 
   return (
     <main className="px-4 py-16">
