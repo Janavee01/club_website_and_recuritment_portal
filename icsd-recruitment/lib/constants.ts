@@ -1,4 +1,12 @@
-import { Department, Position, ProcessStep } from '@/types'
+import { Department, ProcessStep } from '@/types'
+
+export type Position = {
+  id: string
+  title: string
+  description: string
+  questions: string[] // always required, at least an empty array
+}
+
 
 // Department constants
 export const DEPARTMENTS: Department[] = [
@@ -13,47 +21,89 @@ export const DEPARTMENTS: Department[] = [
 // Position constants
 export const POSITIONS: Position[] = [
   {
-    id: 'webdev',
-    title: 'Web Development',
-    description: 'Build and maintain web applications, work with modern frameworks and create user-friendly interfaces.',
-    departmentId: 'webdev',
-    isActive: true,
+    id: "design-and-creative",
+    title: "Design & Creative",
+    description: "Create posters, banners, and visual content.",
+    questions: [
+      "What inspires your creativity when designing?",
+      "Which tools do you use most often for design and why?",
+      "Share a project that reflects your style or skills best.",
+      "How do you handle constructive feedback on your work?",
+      "If we asked you to design a poster for an upcoming event, how would you approach it?"
+    ]
   },
   {
-    id: 'technical',
-    title: 'Technical',
-    description: 'Handle technical infrastructure, system administration, and provide technical support for club activities.',
-    departmentId: 'technical',
-    isActive: true,
+    id: "operations",
+    title: "Operations",
+    description: "Coordinate people and ensure smooth workflows.",
+    questions: [
+      "How do you prioritize tasks when managing multiple responsibilities?",
+      "Describe an event or activity you helped organize in the past.",
+      "How would you handle unexpected challenges during a club event?",
+      "What strategies do you use to keep a team motivated?",
+      "Why do you want to be part of the operations team in our club?"
+    ]
   },
   {
-    id: 'design',
-    title: 'Design and Content',
-    description: 'Create visual designs, graphics, and written content for various club initiatives and communications.',
-    departmentId: 'design',
-    isActive: true,
+    id: "research",
+    title: "Research",
+    description: "Explore new technologies and produce insights.",
+    questions: [
+      "Which topics or areas interest you the most for research?",
+      "How do you ensure the information you find is accurate and reliable?",
+      "Describe a time when your research helped solve a problem.",
+      "If you discovered a new trend that could benefit the club, how would you present it?",
+      "What makes you excited about joining the research team?"
+    ]
   },
   {
-    id: 'operations',
-    title: 'Operations',
-    description: 'Manage day-to-day operations, coordinate events, and ensure smooth functioning of club activities.',
-    departmentId: 'operations',
-    isActive: true,
+    id: "social-media",
+    title: "Social Media",
+    description: "Engage our audience and grow our online presence.",
+    questions: [
+      "Which platforms are you most skilled at and why?",
+      "What type of content do you think engages students the most?",
+      "Share an example of a creative post idea you would make for our club.",
+      "How would you increase reach if engagement started dropping?",
+      "Why are you interested in handling social media for the club?"
+    ]
   },
   {
-    id: 'social',
-    title: 'Social Media and Video Editing',
-    description: 'Manage social media presence, create engaging content, and produce video content for the club.',
-    departmentId: 'social',
-    isActive: true,
+    id: "technical",
+    title: "Technical",
+    description: "Work on software, hardware, or problem solving.",
+    questions: [
+      "Which programming languages or tools are you confident in?",
+      "Describe a technical project you’ve worked on and what you learned.",
+      "How do you usually solve a difficult bug or problem?",
+      "If you could build one new tool for the club, what would it be?",
+      "Why do you want to be part of the technical team?"
+    ]
   },
   {
-    id: 'research',
-    title: 'Research',
-    description: 'Conduct research on emerging technologies, trends, and contribute to knowledge sharing within the club.',
-    departmentId: 'research',
-    isActive: true,
+    id: "video-editing",
+    title: "Video Editing",
+    description: "Create and edit videos for events and campaigns.",
+    questions: [
+      "Which editing tools are you comfortable with?",
+      "Share a video project you’ve worked on that you’re proud of.",
+      "How do you make sure your videos tell a clear story?",
+      "What would you do if you had very little time to edit an important video?",
+      "Why do you want to contribute as a video editor for our club?"
+    ]
   },
+  {
+    id: "web-development",
+    title: "Web Development",
+    description: "Build and maintain our websites.",
+    questions: [
+      "Which web frameworks or technologies have you used before?",
+      "Share a website or web project you built or contributed to.",
+      "How do you make sure a website is user-friendly and responsive?",
+      "If asked to redesign our club website, what would you improve?",
+      "What excites you most about working on web projects?"
+    ]
+  }
 ]
 
 // Process steps constants

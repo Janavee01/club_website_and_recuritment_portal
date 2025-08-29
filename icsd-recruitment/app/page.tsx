@@ -9,8 +9,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import Image from "next/image"
 import { ApplicationForm } from "@/types"
 import { DEPARTMENTS, POSITIONS, PROCESS_STEPS, CLUB_INFO } from "@/lib/constants"
+import { useRouter } from "next/navigation" 
+import Link from "next/link";
 
 export default function RecruitmentPage() {
+  const router = useRouter()
   // Form state - ready for backend integration
   const [formData, setFormData] = useState<ApplicationForm>({
     name: "",
@@ -83,133 +86,9 @@ export default function RecruitmentPage() {
             <Button className="btn-secondary" onClick={() => window.open(CLUB_INFO.website, "_blank")}>
               Visit Us
             </Button>
-            <Button className="btn-primary" onClick={scrollToApplication}>
-              Apply Now
-            </Button>
           </div>
         </div>
       </header>
-
-      {/* Application Form */}
-      <section id="application" className="application-section">
-        <div className="form-container">
-          <Card className="form-card form-gradient glass-card">
-            <h2 className="form-title">Join {CLUB_INFO.name}</h2>
-            <p className="form-subtitle">Apply for your preferred department</p>
-
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label className="form-label">Name</label>
-                <Input 
-                  type="text" 
-                  className="form-field form-input" 
-                  placeholder="Enter your full name"
-                  value={formData.name}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Registration Number</label>
-                <Input 
-                  type="text" 
-                  className="form-field form-input" 
-                  placeholder="Enter your registration number"
-                  value={formData.registrationNumber}
-                  onChange={(e) => handleInputChange('registrationNumber', e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Email</label>
-                <Input 
-                  type="email" 
-                  className="form-field form-input" 
-                  placeholder="Enter your email address"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">First Preference Department</label>
-                <Select value={formData.firstPreference} onValueChange={(value) => handleInputChange('firstPreference', value)}>
-                  <SelectTrigger className="form-field form-input">
-                    <SelectValue placeholder="Select your first preference" />
-                  </SelectTrigger>
-                  <SelectContent className="select-content">
-                    {DEPARTMENTS.map((dept) => (
-                      <SelectItem key={dept.value} value={dept.value} className="select-item">
-                        {dept.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Second Preference Department</label>
-                <Select value={formData.secondPreference} onValueChange={(value) => handleInputChange('secondPreference', value)}>
-                  <SelectTrigger className="form-field form-input">
-                    <SelectValue placeholder="Select your second preference" />
-                  </SelectTrigger>
-                  <SelectContent className="select-content">
-                    {DEPARTMENTS.map((dept) => (
-                      <SelectItem key={dept.value} value={dept.value} className="select-item">
-                        {dept.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Why do you want to join your first preference department?</label>
-                <Textarea
-                  className="form-field form-input textarea-field"
-                  placeholder="Explain your interest in your first preference department..."
-                  value={formData.firstPreferenceReason}
-                  onChange={(e) => handleInputChange('firstPreferenceReason', e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Why do you want to join your second preference department?</label>
-                <Textarea
-                  className="form-field form-input textarea-field"
-                  placeholder="Explain your interest in your second preference department..."
-                  value={formData.secondPreferenceReason}
-                  onChange={(e) => handleInputChange('secondPreferenceReason', e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Previous Experience</label>
-                <Textarea
-                  className="form-field form-input textarea-large"
-                  placeholder="Describe any relevant previous experience, projects, or skills..."
-                  value={formData.previousExperience}
-                  onChange={(e) => handleInputChange('previousExperience', e.target.value)}
-                  required
-                />
-              </div>
-
-              <Button 
-                type="submit" 
-                className="submit-button btn-primary"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Submitting...' : 'Submit Application'}
-              </Button>
-            </form>
-          </Card>
-        </div>
-      </section>
 
       {/* Open Positions Section */}
       <section className="positions-section">
@@ -222,6 +101,13 @@ export default function RecruitmentPage() {
               <Card key={position.id} className="position-item position-card glass-card">
                 <h3 className="position-title">{position.title}</h3>
                 <p className="position-description">{position.description}</p>
+                {/* Apply Now button */}
+                <Link href={`/recruitment/${position.id}`}>
+                  <Button className="btn-primary mt-4">
+                    Apply Now
+                  </Button>
+                </Link>
+
               </Card>
             ))}
           </div>

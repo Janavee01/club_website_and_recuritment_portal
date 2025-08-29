@@ -51,7 +51,7 @@ export default function Departments() {
   return (
     <section id="departments" className="departments">
       <div className="container">
-        <h2 className="section-title">Our Departments</h2>
+        <h2 className="section-title">Recruitments</h2>
         <div className="departments-grid">
           {departments.map((dept, index) => (
             <div
