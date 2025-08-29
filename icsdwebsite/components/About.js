@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section id="about" className="about">
       <div className="container">
-        <h2 className="section-title">About ICSD Club</h2>
+        <h2 className="section-title">ABOUT ICSD CLUB</h2>
         <div className="about-content">
           <div className="about-image">
             <Image src="/placeholder.svg?height=400&width=500" alt="ICSD Club Activities" width={500} height={400} />

@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <h2 className="section-title">Connect With Us</h2>
+        <h2 className="section-title">CONNECT WITH US</h2>
         <div className="contact-content">
           <div className="contact-info">
             <h3>Get in Touch</h3>

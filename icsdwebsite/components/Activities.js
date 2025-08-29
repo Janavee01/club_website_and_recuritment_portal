@@ -46,7 +46,7 @@ export default function Activities() {
   return (
     <section className="activities">
       <div className="container">
-        <h2 className="section-title">Our Activities</h2>
+        <h2 className="section-title">OUR ACTIVITIES</h2>
         <div className="carousel-container">
           <div className="carousel">
             <button className="carousel-btn prev" onClick={prevSlide}>

@@ -51,7 +51,8 @@ export default function Departments() {
   return (
     <section id="departments" className="departments">
       <div className="container">
-        <h2 className="section-title">Recruitments</h2>
+        <h2 className="section-title">OUR DEPARTMENTS</h2>
+
         <div className="departments-grid">
           {departments.map((dept, index) => (
             <div
@@ -59,14 +60,23 @@ export default function Departments() {
               className="department-card relative"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: "pointer" }}
             >
-              <div className="card-background" style={{ backgroundImage: `url(${dept.image})` }}></div>
+              <div
+                className="card-background"
+                style={{ backgroundImage: `url(${dept.image})` }}
+              ></div>
+
               {/* Dark overlay on hover */}
               <div
-                className={`absolute inset-0 transition-opacity duration-200 pointer-events-none ${hoveredIndex === index ? 'bg-black/70 opacity-100' : 'bg-black/0 opacity-0'}`}
+                className={`absolute inset-0 transition-opacity duration-200 pointer-events-none ${
+                  hoveredIndex === index
+                    ? "bg-black/70 opacity-100"
+                    : "bg-black/0 opacity-0"
+                }`}
                 aria-hidden="true"
               />
+
               <div className="card-content flex items-center justify-center h-full w-full">
                 {hoveredIndex === index ? (
                   <div className="w-full flex flex-col items-center">
@@ -86,7 +96,22 @@ export default function Departments() {
             </div>
           ))}
         </div>
+
+        {/* JOIN US button under departments */}
+        <div className="mt-10 text-center">
+          <a
+            id="actionBtn"
+            className="link-btn"
+            href="https://recruitmentportalicsd.vercel.app/"
+            role="button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JOIN US!
+          </a>
+        </div>
       </div>
     </section>
   );
 }
+

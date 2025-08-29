@@ -43,9 +43,9 @@ export default function Navbar() {
         <div className={`nav-menu ${isMenuOpen ? "active" : ""}`}> 
           <button className="nav-link" onClick={() => scrollToSection("home")}> Home </button>
           <button className="nav-link" onClick={() => scrollToSection("about")}> About </button>
-          <button className="nav-link" onClick={() => scrollToSection("departments")}> Recruitments </button>
+          <button className="nav-link" onClick={() => scrollToSection("departments")}> Departments </button>
           <button className="nav-link" onClick={() => scrollToSection("contact")}> Contact Us </button>
-          <a href="https://icsdvitchennai.github.io/ICSD-Vit-Chennai/" className="nav-link"> Join us </a>
+          <a href="https://recruitmentportalicsd.vercel.app/" className="nav-link"> Join us </a>
         </div>
 
         <div className="hamburger" onClick={toggleMenu}>
