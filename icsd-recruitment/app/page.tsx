@@ -11,6 +11,7 @@ import { ApplicationForm } from "@/types"
 import { DEPARTMENTS, POSITIONS, PROCESS_STEPS, CLUB_INFO } from "@/lib/constants"
 import { useRouter } from "next/navigation" 
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function RecruitmentPage() {
   const router = useRouter()
@@ -75,20 +76,7 @@ export default function RecruitmentPage() {
 
   return (
     <div className="page-container">
-      {/* Header */}
-      <header className="header-container glass-header">
-        <div className="header-content">
-          <div className="logo-section">
-            <Image src="/images/icsd-logo.png" alt={`${CLUB_INFO.name} Logo`} width={40} height={40} className="rounded-lg" />
-            <h1 className="logo-title">{CLUB_INFO.name}</h1>
-          </div>
-          <div className="header-buttons">
-            <Button className="btn-secondary" onClick={() => window.open(CLUB_INFO.website, "_blank")}>
-              Visit Us
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Open Positions Section */}
       <section className="positions-section">

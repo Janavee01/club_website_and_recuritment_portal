@@ -549,6 +549,11 @@ body {
   gap: 2rem;
 }
 
+.positions-section {
+  padding: 6rem 1.5rem 4rem 1.5rem; 
+}
+
+
 @media (min-width: 768px) {
   .positions-grid {
     grid-template-columns: repeat(2, 1fr);

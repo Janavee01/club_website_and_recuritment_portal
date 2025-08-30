@@ -79,66 +79,95 @@ export default function RecruitmentForm({ department, questions }: RecruitmentFo
 }
 
   return (
-    <main className="px-4 py-16">
-      <Card className="card-themed max-w-3xl mx-auto p-8 md:p-10">
-        <h1 className="h1-hero">Join ICSD Club</h1>
-        <p className="subtle mt-3">Apply for your preferred department</p>
+    <section className="application-section">
+      <div className="form-container">
+        <div className="form-card glass-card form-gradient">
+          <h2 className="form-title">Apply for {department}</h2>
+          <p className="form-subtitle">
+            We're excited to see your application!
+          </p>
 
-        <form onSubmit={handleSubmit} className="mt-10 space-y-6">
-          <div className="space-y-2">
-            <label className="label">Name</label>
-            <Input
-              type="text"
-              placeholder="Enter your full name"
-              value={formData.name}
-              onChange={(e) => handleInputChange("name" as const, e.target.value)}
-              required
-              className="input-themed"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <label className="label">Registration Number</label>
-            <Input
-              type="text"
-              placeholder="Enter your registration number"
-              value={formData.registrationNumber}
-              onChange={(e) => handleInputChange("registrationNumber" as const, e.target.value)}
-              required
-              className="input-themed"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <label className="label">Email</label>
-            <Input
-              type="email"
-              placeholder="Enter your email address"
-              value={formData.email}
-              onChange={(e) => handleInputChange("email" as const, e.target.value)}
-              required
-              className="input-themed"
-            />
-          </div>
-
-          {questions.map((question, index) => (
-            <div key={index} className="space-y-2">
-              <label className="label">{question}</label>
-              <Textarea
-                placeholder="Type your answer here..."
-                value={formData.answers[question] || ""}
-                onChange={(e) => handleAnswerChange(question, e.target.value)}
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="form-group">
+              <label htmlFor="name" className="form-label">
+                Name
+              </label>
+              <Input
+                id="name"
+                type="text"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={(e) =>
+                  handleInputChange("name" as const, e.target.value)
+                }
                 required
-                className="input-themed min-h-28"
+                className="form-field"
               />
             </div>
-          ))}
 
-          <Button type="submit" disabled={isSubmitting} className="btn-primary w-full">
-            {isSubmitting ? "Submitting..." : `Submit Application${department ? ` — ${department}` : ""}`}
-          </Button>
-        </form>
-      </Card>
-    </main>
+            <div className="form-group">
+              <label htmlFor="registrationNumber" className="form-label">
+                Registration Number
+              </label>
+              <Input
+                id="registrationNumber"
+                type="text"
+                placeholder="e.g., 21BCE0001"
+                value={formData.registrationNumber}
+                onChange={(e) =>
+                  handleInputChange(
+                    "registrationNumber" as const,
+                    e.target.value
+                  )
+                }
+                required
+                className="form-field"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="your.email@vitstudent.ac.in"
+                value={formData.email}
+                onChange={(e) =>
+                  handleInputChange("email" as const, e.target.value)
+                }
+                required
+                className="form-field"
+              />
+            </div>
+
+            {questions.map((question, index) => (
+              <div className="form-group" key={index}>
+                <label htmlFor={`question-${index}`} className="form-label">
+                  {question}
+                </label>
+                <Textarea
+                  id={`question-${index}`}
+                  placeholder="Your answer"
+                  value={formData.answers[question] || ""}
+                  onChange={(e) => handleAnswerChange(question, e.target.value)}
+                  required
+                  className="form-field textarea-field"
+                />
+              </div>
+            ))}
+
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="submit-button btn-primary"
+            >
+              {isSubmitting ? "Submitting..." : "Submit Application"}
+            </Button>
+          </form>
+        </div>
+      </div>
+    </section>
   )
 }
