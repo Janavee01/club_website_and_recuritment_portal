@@ -26,6 +26,7 @@ export default function Header() {
             className="rounded-lg"
           />
         </div>
+        {/*
         <div className="header-buttons">
           <Button
             className="btn-secondary"
@@ -39,6 +40,7 @@ export default function Header() {
             Visit Us
           </Button>
         </div>
+        */}
       </div>
     </header>
   );
