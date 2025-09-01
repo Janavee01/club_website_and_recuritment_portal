@@ -6,27 +6,20 @@ export default function Activities() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const activities = [
-    {
-      title: "Technical Workshop",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      title: "Project Exhibition",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      title: "Industry Visit",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      title: "Hackathon Event",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      title: "Guest Lecture",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-  ]
+  {
+    title: "Project Exhibition",
+    image: "/images/carousel.jpg",
+  },
+  {
+    title: "Technical Workshop",
+    image: "/images/carousel2.jpg", 
+  },
+  {
+    title: "Projects Showcase",
+    image: "/images/carousel3r.jpg", 
+  },
+];
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -57,8 +50,9 @@ export default function Activities() {
             <div className="carousel-content">
               {activities.map((activity, index) => (
                 <div key={index} className={`carousel-slide ${index === currentSlide ? "active" : ""}`}>
-                  <Image src={activity.image || "/placeholder.svg"} alt={activity.title} width={400} height={300} />
-                  <h3>{activity.title}</h3>
+                  <div className="image-container">
+                    <Image src={activity.image || "/placeholder.svg"} alt={activity.title} layout="fill" objectFit="cover" className="carousel-image-tag" />
+                  </div>
                 </div>
               ))}
             </div>
@@ -67,6 +61,9 @@ export default function Activities() {
                 <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
+          </div>
+          <div className="carousel-text-content">
+            <h3>{activities[currentSlide].title}</h3>
           </div>
           <div className="carousel-indicators">
             {activities.map((_, index) => (

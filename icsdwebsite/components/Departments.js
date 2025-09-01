@@ -6,45 +6,45 @@ export default function Departments() {
   const departments = [
     {
       title: "Technical",
-      head: "John Doe",
+      head: "Tinu Matthew",
       description:
         "Leading technical workshops, project development, and hands-on learning experiences in circuit design and embedded systems.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/Technical.png",
     },
     {
       title: "Design and Content",
-      head: "Jane Smith",
+      head: "Noel Jose",
       description:
         "Creating engaging visual content, managing club publications, and designing promotional materials for events.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/Design.png",
     },
     {
       title: "Operations",
-      head: "Alex Johnson",
+      head: "Joseph Santhosh",
       description:
         "Managing club logistics, event coordination, resource allocation, and ensuring smooth functioning of all activities.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/operations.png",
     },
     {
       title: "Social Media and Video Editing",
-      head: "Priya Patel",
+      head: "Noel Jose",
       description:
         "Managing online presence, creating engaging video content, and promoting club activities across digital platforms.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/socialmedia.png",
     },
     {
       title: "Research",
-      head: "Rahul Verma",
+      head: "Drahvidan Chittarasan",
       description:
         "Conducting cutting-edge research in IC design, exploring emerging technologies, and publishing technical papers.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/research.png",
     },
     {
       title: "Web Development",
-      head: "Sara Lee",
+      head: "Janavee",
       description:
         "Developing and maintaining club websites, creating digital tools, and managing online platforms for the community.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/Webdev.png",
     },
   ];
 
@@ -102,7 +102,7 @@ export default function Departments() {
           <a
             id="actionBtn"
             className="link-btn"
-            href="https://recruitmentportalicsd.vercel.app/"
+            href="https://icsd-recruitment-lt1qtf6es-janavee01s-projects.vercel.app/"
             role="button"
             target="_blank"
             rel="noopener noreferrer"

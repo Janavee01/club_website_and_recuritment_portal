@@ -10,7 +10,7 @@ export default function Hero() {
         <h2 className="hero-subtitle">INTEGRATED CIRCUITS AND SYSTEM DESIGN</h2>
         <p className="hero-description">
           Empowering the next generation of engineers at VIT Chennai <br />
-          through innovation, collaboration, and cutting-edge technology <br />
+          through innovation, collaboration, and cutting-edge technology
           in integrated circuits and system design.
         </p>
 
