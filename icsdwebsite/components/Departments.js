@@ -41,7 +41,7 @@ export default function Departments() {
     },
     {
       title: "Web Development",
-      head: "Janavee",
+      head: "V Janavee",
       description:
         "Developing and maintaining club websites, creating digital tools, and managing online platforms for the community.",
       image: "/Webdev.png",

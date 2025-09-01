@@ -6,20 +6,19 @@ export default function Activities() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const activities = [
-  {
-    title: "Project Exhibition",
-    image: "/images/carousel.jpg",
-  },
-  {
-    title: "Technical Workshop",
-    image: "/images/carousel2.jpg", 
-  },
-  {
-    title: "Projects Showcase",
-    image: "/images/carousel3r.jpg", 
-  },
-];
-
+    {
+      title: "Project Exhibition",
+      image: "/images/carousel.jpg",
+    },
+    {
+      title: "Technical Workshop",
+      image: "/images/carousel2.jpg",
+    },
+    {
+      title: "Projects Showcase",
+      image: "/images/carousel3r.jpg",
+    },
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -51,7 +50,14 @@ export default function Activities() {
               {activities.map((activity, index) => (
                 <div key={index} className={`carousel-slide ${index === currentSlide ? "active" : ""}`}>
                   <div className="image-container">
-                    <Image src={activity.image || "/placeholder.svg"} alt={activity.title} layout="fill" objectFit="cover" className="carousel-image-tag" />
+                    <Image 
+                      src={activity.image || "/placeholder.svg"} 
+                      alt={activity.title} 
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{ objectFit: "contain" }}
+                      className="carousel-image-tag" 
+                    />
                   </div>
                 </div>
               ))}
