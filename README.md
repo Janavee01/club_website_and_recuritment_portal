@@ -5,14 +5,12 @@
 
 This repository contains the complete web presence for the ICSD (Integrated Circuits and System Design) student club. It is structured as a monorepo containing two separate Next.js applications: the main informational website and a functional recruitment portal.
 
-**Note for Recruiters:** This repository demonstrates the ability to build and manage multiple modern web applications. The **Website** showcases skills in UI/UX, animations, and responsive design, while the **Recruitment Portal** highlights full-stack development, robust form handling, and serverless architecture.
-
 ---
 
 ### ✨ Live Demos
 
-* **Official Website:** `[Link to your deployed website]`
-* **Recruitment Portal:** `[Link to your deployed recruitment portal]`
+* **Official Website:** `https://site-eight-red-75.vercel.app/`
+* **Recruitment Portal:** `https://icsd-recruitment.vercel.app/`
 
 ---
 
@@ -31,7 +29,8 @@ The main website provides a comprehensive overview of the ICSD club, designed to
 
 | Main Page Screenshot |
 | :------------------: |
-| ![Main Page](https://via.placeholder.com/600x375.png?text=Website+Homepage+Screenshot) |
+<img width="1895" height="900" alt="image" src="https://github.com/user-attachments/assets/1850c14b-762f-4fa8-ae06-9834d6e1ae3b" />
+
 
 ### Key Features
 
@@ -55,10 +54,6 @@ The main website provides a comprehensive overview of the ICSD club, designed to
 ## 📝 ICSD Recruitment Portal
 
 A purpose-built application to handle the club's recruitment process efficiently.
-
-| Application Form Screenshot |
-| :-------------------------: |
-| ![Form Page](https://via.placeholder.com/600x375.png?text=Recruitment+Form+Screenshot) |
 
 ### Key Features
 
