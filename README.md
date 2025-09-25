@@ -9,8 +9,8 @@ This repository contains the complete web presence for the ICSD (Integrated Circ
 
 ### ✨ Live Demos
 
-* **Official Website:** `https://site-eight-red-75.vercel.app/`
-* **Recruitment Portal:** `https://icsd-recruitment.vercel.app/`
+**Official Website:** [https://site-eight-red-75.vercel.app/](https://site-eight-red-75.vercel.app/)  
+**Recruitment Portal:** [https://icsd-recruitment.vercel.app/](https://icsd-recruitment.vercel.app/)
 
 ---
 
