@@ -18,8 +18,9 @@ This repository contains the complete web presence for the ICSD (Integrated Circ
 
 This repository houses two distinct projects:
 
-1.  **🌐 ICSD Official Website (`/icsdwebsite`)**: A visually engaging, single-page informational site that serves as the main digital hub for the club. It details the club's mission, departments, and activities.
-2.  **📝 ICSD Recruitment Portal (`/icsd-recruitment`)**: A full-stack application designed to streamline the club's seasonal recruitment drives. It features dynamic forms and a serverless backend for collecting and managing applications.
+1. **🌐 [ICSD Official Website](https://site-eight-red-75.vercel.app/)**: A visually engaging, single-page informational site that serves as the main digital hub for the club. It details the club's mission, departments, and activities.  
+2. **📝 [ICSD Recruitment Portal](https://icsd-recruitment.vercel.app/)**: A full-stack application designed to streamline the club's seasonal recruitment drives. It features dynamic forms and a serverless backend for collecting and managing applications.
+
 
 ---
 
