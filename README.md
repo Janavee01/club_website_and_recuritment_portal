@@ -106,4 +106,12 @@ To run these projects locally, first clone the repository, then follow the instr
     pnpm run dev
     ```
 
+ ### Environment Variables (icsd-recruitment)
+
+If you're running the **icsd-recruitment** project, copy `.env.example` to `.env.local` and set:
+
+- `GSHEET_WEBAPP_URL` — the Google Apps Script Web App URL that receives applications.
+
 4.  Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+   
