@@ -52,17 +52,23 @@ export default function RecruitmentForm({ department, questions }: RecruitmentFo
   setIsSubmitting(true)
 
   try {
-    const res = await fetch(
-      "https://script.google.com/macros/s/AKfycbx__Ua5s9VOjYnPcyTf4gL9P9Ov4c3fKP8ILS1IdcrvadyBvG9Xr1_uL2LN1HRYi0z4Eg/exec",
-      {
-        method: "POST",
-        mode: "no-cors", // required for Google Sheets
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, department }),
-      }
-    )
+    const res = await fetch("/api/apply", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...formData, department }),
+    })
 
-    // since no-cors gives opaque response, you can't read res.json()
+    let payload: { success?: boolean; message?: string } = {}
+    try {
+      payload = await res.json()
+    } catch {
+      // response body wasn't JSON; fall back to status-based check below
+    }
+
+    if (!res.ok || payload.success === false) {
+      throw new Error(payload.message || "Submission failed")
+    }
+
     alert("Application submitted successfully!")
 
     setFormData({
